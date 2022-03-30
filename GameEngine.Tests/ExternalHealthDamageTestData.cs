@@ -14,7 +14,7 @@ namespace GameEngine.Tests
 				var testCases = new List<object[]>();
 				foreach (var csvline in csvLines)
 				{
-					IEnumerable<int> values = csvline.Split(", ").Select(int.Parse);
+					IEnumerable<int> values = csvline.Split(",").Select(int.Parse);
 					object[] testCase = values.Cast<object>().ToArray();
 					testCases.Add(testCase);
 				}
