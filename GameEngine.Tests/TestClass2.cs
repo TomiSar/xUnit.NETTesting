@@ -16,13 +16,13 @@ namespace GameEngine.Tests
 			_output = output;
 		}
 
-		[Fact (Skip = "Dummy test3 no need to run this")]
+		[Fact]
 		public void Test3()
 		{
 			_output.WriteLine($"GameState ID={_gameStateFixture.State.Id}");
 		}
 
-		[Fact(Skip = "Dummy test4 no need to run this")]
+		[Fact]
 		public void Test4()
 		{
 			_output.WriteLine($"GameState ID={_gameStateFixture.State.Id}");

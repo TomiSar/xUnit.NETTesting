@@ -210,5 +210,20 @@ namespace GameEngine.Tests
 			// Assert
 			Assert.PropertyChanged(_sut, "Health", () => _sut.TakeDamage(10));
 		}
+
+		[Theory]
+		//[InlineData(0, 100)]
+		//[InlineData(1, 99)]
+		//[InlineData(50, 50)]
+		//[InlineData(99, 1)]
+		//[InlineData(101, 1)]
+		//[MemberData(nameof(InternalHealthDamageTestData.TestData), MemberType = typeof(InternalHealthDamageTestData))]
+		//[MemberData(nameof(ExternalHealthDamageTestData.TestData), MemberType = typeof(ExternalHealthDamageTestData))]
+		[HealthDamageData]
+		public void TakeDamage(int amountOfDamage, int expectedHealth)
+		{
+			_sut.TakeDamage(amountOfDamage);
+			Assert.Equal(expectedHealth, _sut.Health);
+		}
 	}
 }
